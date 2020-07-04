@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BasicCifParser
+namespace RailDataEngine.Cif.FileReader.Ext
 {
     public static class EnumerableExtensions
     {

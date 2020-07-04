@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BasicCifParser
+namespace RailDataEngine.Cif.FileReader
 {
     public class BasicScheduleCifRecord : CifRecord
     {

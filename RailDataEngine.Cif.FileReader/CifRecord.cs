@@ -1,4 +1,4 @@
-﻿namespace BasicCifParser
+﻿namespace RailDataEngine.Cif.FileReader
 {
     public class CifRecord
     {
