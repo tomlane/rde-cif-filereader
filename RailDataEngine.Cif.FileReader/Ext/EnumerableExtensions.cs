@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace RailDataEngine.Cif.FileReader.Ext
 {
@@ -30,7 +29,7 @@ namespace RailDataEngine.Cif.FileReader.Ext
                         basicScheduleRecord = new BasicScheduleCifRecord
                         {
                             CifString = line
-                        }; 
+                        };
                         break;
                     case CifRecordTypes.BasicScheduleExtraDetails:
                         basicScheduleRecord.ExtraDetails = new CifRecord
@@ -54,7 +53,7 @@ namespace RailDataEngine.Cif.FileReader.Ext
                         yield return basicScheduleRecord;
                         break;
                     default:
-                        throw new ArgumentException("Unknown CIF record");
+                        throw new BadScheduleFileFormatException($"Unexpected CIF record - {type}");
                 }
             }
         }
