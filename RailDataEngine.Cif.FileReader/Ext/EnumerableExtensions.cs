@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RailDataEngine.Cif.FileReader.Ext
 {
@@ -10,7 +11,13 @@ namespace RailDataEngine.Cif.FileReader.Ext
 
             foreach (var line in lines)
             {
-                var type = line.Substring(0, 2);
+                if (string.IsNullOrWhiteSpace(line))
+                    throw new ArgumentNullException(nameof(line));
+
+                if (line.Length != 80)
+                    throw new ArgumentException("CIF record must have a length of 80.");
+
+                var type = line.AsSpan().Slice(0, 2).ToString();
 
                 switch (type)
                 {
