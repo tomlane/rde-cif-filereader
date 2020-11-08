@@ -2,7 +2,7 @@
 
 namespace RailDataEngine.Cif.FileReader
 {
-    public class BasicScheduleCifRecord : CifRecord
+    public record BasicScheduleCifRecord : CifRecord
     {
         public CifRecord ExtraDetails { get; set; }
         public ICollection<CifRecord> SubRecords { get; set; } = new List<CifRecord>();

@@ -1,7 +1,7 @@
 ﻿namespace RailDataEngine.Cif.FileReader
 {
-    public class CifRecord
+    public record CifRecord
     {
-        public string CifString { get; set; }
+        public string CifString { get; init; }
     }
 }
